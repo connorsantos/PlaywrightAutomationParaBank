@@ -7,7 +7,6 @@
 	<listeners>
 		<listener
 			class-name="com.qa.parabank.listeners.ExtentReportListener" />
-
 	</listeners>
 
 	<test name="ParaBank Home Page Test_chrome">
@@ -25,8 +24,8 @@
 	</test>
 
 
-	<test name="ParaBank Accounts Overview Page Test_chromium">
-		<parameter name="browser" value="chromium" />
+	<test name="ParaBank Accounts Overview Page Test_firefox">
+		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.parabank.tests.AccountsOverviewPageTest" />
 		</classes>
