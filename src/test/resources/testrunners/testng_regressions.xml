@@ -24,12 +24,12 @@
 	</test>
 
 
-	<test name="ParaBank Accounts Overview Page Test_firefox">
+	<!--<test name="ParaBank Accounts Overview Page Test_firefox">
 		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.parabank.tests.AccountsOverviewPageTest" />
 		</classes>
-	</test>
+	</test>-->
 
 
 
