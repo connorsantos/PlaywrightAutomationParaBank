@@ -4,6 +4,7 @@ import java.util.Properties;
 
 import com.qa.parabank.pages.AboutUsPage;
 import com.qa.parabank.pages.AccountsOverviewPage;
+import com.qa.parabank.pages.RegisterPage;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
@@ -20,6 +21,7 @@ public class BaseTest {
 	protected HomePage homePage;
 	protected AboutUsPage aboutUsPage;
 	protected AccountsOverviewPage accountsOverviewPage;
+	protected RegisterPage registerPage;
 
 	@Parameters({ "browser" })
 	@BeforeTest

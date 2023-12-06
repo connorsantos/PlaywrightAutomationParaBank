@@ -11,6 +11,7 @@ public class HomePage extends BasePage{
 	private String password = "input[name='password']";
 	private String loginBtn = "input[value='Log In']";
 	private String acctOvrvwHeader = "h1:text('Accounts Overview')";
+	private String registerLnk = "a:text('Register')";
 
 
 	// 2. page constructor:
@@ -22,6 +23,11 @@ public class HomePage extends BasePage{
 	public AboutUsPage navigateToAboutUsPage() {
 		page.click(aboutUsLink);
 		return new AboutUsPage(page);
+	}
+
+	public RegisterPage navigateToRegisterPage() {
+		page.click(registerLnk);
+		return new RegisterPage(page);
 	}
 
 	public AccountsOverviewPage doLogin(String user, String pass){
