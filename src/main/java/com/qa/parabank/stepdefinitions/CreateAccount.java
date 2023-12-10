@@ -1,7 +1,5 @@
 package com.qa.parabank.stepdefinitions;
 
-
-import com.microsoft.playwright.Page;
 import com.qa.parabank.TestObjects.Customer;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -52,13 +50,27 @@ public class CreateAccount{
     @When("I fill out the sign in form and click register")
     public void fillOutForm() {
         registerPage.registerUser(customer);
-        scenario.log(customer.getFirstName()+customer.getLastName());
+        scenario.log(customer.getFirstName()+ " " +customer.getLastName());
     }
 
     @Then("Account should be created successfully")
     public void checkForCreatedAccount(){
-        System.out.println(page.locator(registerPage.getSccsmessage()).textContent());
-        System.out.println("Welcome " + customer.getUsername()+registerPage.getUserEnding());
-        Assert.assertEquals(page.locator(registerPage.getSccsmessage()).textContent(),"Welcome " + customer.getUsername()+registerPage.getUserEnding());
+        String expected = "Welcome " + customer.getUsername()+registerPage.getUserEnding();
+        String actual = page.locator(registerPage.getSccsmessage()).textContent();
+        System.out.println(expected);
+        System.out.println(actual);
+
+        if(expected.equalsIgnoreCase(actual)){
+            scenario.log("Expected: " + expected + "\n" +
+                              "Actual:   " + actual + "\n" +
+                              "PASS");
+        } else {
+            scenario.log("Expected: " + expected + "\n" +
+                              "Actual:   " + actual + "\n" +
+                              "FAIL");
+        }
+
+        Assert.assertEquals(expected,actual);
+
     }
 }

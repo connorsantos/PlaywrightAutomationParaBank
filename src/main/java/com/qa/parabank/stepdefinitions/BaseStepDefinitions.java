@@ -7,17 +7,14 @@ import com.qa.parabank.pages.AccountsOverviewPage;
 import com.qa.parabank.pages.HomePage;
 import com.qa.parabank.pages.RegisterPage;
 import io.cucumber.java.*;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Parameters;
 
 import java.util.Properties;
 
 public class BaseStepDefinitions {
-    static PlaywrightFactory pf;
-    static Page page;
-    static  Properties prop;
-    static  HomePage homePage;
+    protected static PlaywrightFactory pf;
+    protected static Page page;
+    protected static  Properties prop;
+    protected static  HomePage homePage;
     protected AboutUsPage aboutUsPage;
     protected AccountsOverviewPage accountsOverviewPage;
     protected static RegisterPage registerPage;
